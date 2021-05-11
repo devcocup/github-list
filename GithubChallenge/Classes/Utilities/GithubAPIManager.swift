@@ -13,7 +13,11 @@ class GithubAPIManager: NSObject {
     static let shared = GithubAPIManager()
     
     public func loadRepositories(_ page: Int, completion: @escaping (_ repositories: [Repository]?, _ totalCount: Int, _ error: Error?) -> Void) {
-        let url = "https://api.github.com/search/repositories?q=created:>2017-10-22&sort=stars&order=desc&page=\(page)"
+        let startDate = Calendar.current.date(byAdding: .day, value: -30, to: Date())!
+        let formatter = DateFormatter()
+        formatter.dateFormat = "YYYY-MM-dd"
+        let dateStr = formatter.string(from: startDate)
+        let url = "https://api.github.com/search/repositories?q=created:>\(dateStr)&sort=stars&order=desc&page=\(page)"
         AF.request(url.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!).responseJSON { (response) in
             switch response.result {
             case .success(let json):
