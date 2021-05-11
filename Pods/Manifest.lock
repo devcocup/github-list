@@ -1,0 +1,25 @@
+PODS:
+  - Alamofire (5.4.0)
+  - AlamofireImage (4.1.0):
+    - Alamofire (~> 5.1)
+  - Refreshable (1.2.0)
+
+DEPENDENCIES:
+  - Alamofire
+  - AlamofireImage
+  - Refreshable
+
+SPEC REPOS:
+  trunk:
+    - Alamofire
+    - AlamofireImage
+    - Refreshable
+
+SPEC CHECKSUMS:
+  Alamofire: 3b6a534a3df22db367e4dedeeca73d1ddfcf0e2f
+  AlamofireImage: c4a2ba349885fb3064feb74d2e547bd42ce9be10
+  Refreshable: 0f76b6d198178e6cd2823a553fbf4e84a3dba527
+
+PODFILE CHECKSUM: 52e470854a027692f641f39d71a115807590187c
+
+COCOAPODS: 1.10.0
